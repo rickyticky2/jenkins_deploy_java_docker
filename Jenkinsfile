@@ -35,7 +35,7 @@ pipeline {
     stage('Run docker on remote host') {
       steps {
              
-             sh '''ssh root@138.68.165.213 'docker run -d -p 8081:8080 rickyticky2/puzzle:1.0' '''
+             sh '''ssh root@138.68.165.213 'docker run -d -p 8081:8080 rickyticky2/boxfuse:1.0' '''
       }
     }
     

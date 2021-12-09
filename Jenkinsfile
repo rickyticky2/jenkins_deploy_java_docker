@@ -1,7 +1,7 @@
 pipeline {
   agent {
           docker{
-             image 'rickyticky2/agent_jenkins:0.3'
+             image 'rickyticky2/agent_jenkins:0.4'
              args '-v /var/run/docker.sock:/var/run/docker.sock -u root '
              registryCredentialsId 'docker_hub'
           }

@@ -1,0 +1,9 @@
+FROM docker:latest
+RUN apk add maven
+RUN apk add openjdk8
+RUN apk add openssh
+RUN mkdir /root/.ssh
+COPY id_rsa /root/.ssh/id_rsa
+RUN chmod 600 /root/.ssh/id_rsa
+
+RUN ssh-keyscan -H 138.68.165.213 >> ~/.ssh/known_hosts

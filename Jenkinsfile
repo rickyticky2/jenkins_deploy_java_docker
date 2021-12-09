@@ -25,8 +25,8 @@ pipeline {
 
     stage('Build And Push Docker Image') {
       steps {
-        sh 'docker build --tag=puzzle .'
-        sh 'docker tag puzzle rickyticky2/boxfuse:1.0'
+        sh 'docker build --tag=boxfuse .'
+        sh 'docker tag boxfuse rickyticky2/boxfuse:1.0'
         sh 'docker push rickyticky2/boxfuse:1.0'
 
       }

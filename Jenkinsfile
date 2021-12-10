@@ -37,7 +37,6 @@ pipeline {
              
              sh """ssh root@138.68.165.213<< EOF
              docker stop boxfuse
-             echo y | docker system prune -a
              docker run --rm --name boxfuse -d -p 8081:8080 rickyticky2/boxfuse:1.0"""
             } 
              

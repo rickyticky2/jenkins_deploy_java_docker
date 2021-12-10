@@ -23,7 +23,7 @@ pipeline {
       }
     }
 
-    stage('Build And Push Docker Image') {
+    stage('Build And push Docker image') {
       steps {
         sh 'docker build --tag=boxfuse .'
         sh 'docker tag boxfuse rickyticky2/boxfuse:1.0'

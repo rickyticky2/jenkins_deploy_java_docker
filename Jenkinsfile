@@ -33,11 +33,11 @@ pipeline {
     }
 
     stage('Run docker on remote host') {
-      steps { 
-        catchError {
+      steps { catchError {
              
-             sh '''ssh root@138.68.165.213 'docsh 'echo y | docker images -a' 
-             }
+             sh '''ssh root@138.68.165.213 'docker stop boxfuse' 'docker run --rm --name boxfuse -d -p 8081:8080 rickyticky2/boxfuse:1.0' 'echo y | docker images -a' '''
+            } 
+             
             echo currentBuild.result
 
 

@@ -34,8 +34,10 @@ pipeline {
 
     stage('Run docker on remote host') {
       steps {
-             
+             sh 'docker stop boxfuse'
              sh '''ssh root@138.68.165.213 'docker run --rm --name boxfuse -d -p 8081:8080 rickyticky2/boxfuse:1.0' '''
+             sh 'echo y | docker images -a'
+
       }
     }
     
